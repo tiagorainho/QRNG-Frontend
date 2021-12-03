@@ -6,9 +6,9 @@
 
 </script>
 
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen font-body">
 	<Navbar/>
-	<div class="flex-grow px-4 md:px-32 py-12">
+	<div class="flex-grow min-w-full px-4 md:px-32 py-12 bg-light-gray text-gray-700">
     	<Router {routes}/>
 	</div>
 	<Footer/>

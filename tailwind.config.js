@@ -5,7 +5,12 @@ module.exports = {
     extend: {
       colors: {
         'dark-gray': '#191919',
+        'it-red': '#BC1737',
+        'light-gray': '#F8F9FA'
       },
+      fontFamily: {
+        body: ['"Inter"']
+      }
     },
   },
   variants: {

@@ -1,6 +1,6 @@
 <script lang="ts">
     import {location} from 'svelte-spa-router'
-    const selected_color = 'text-red-400';
+    const selected_color = 'text-it-red';
 </script>
 
 
@@ -10,10 +10,10 @@
         <!-- left -->
         <ul class="flex items-center">
             <!-- add button -->
-            <li class="h-6 w-6">
+            <li class="h-8 w-8">
                 <img
                     class="h-full w-full mx-auto"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/512px-Svelte_Logo.svg.png"
+                    src="/qrng-logo.png"
                     alt="svelte logo" />
             </li>
         </ul>
@@ -23,6 +23,7 @@
             <a href="/#" class="hover:no-underline {$location == '/' ? selected_color : ''}">Documentation</a>
             <a href="/#/api" class="hover:no-underline {$location == '/api' ? selected_color : ''}">API</a>
             <a href="/#/qrng" class="hover:no-underline {$location == '/qrng' ? selected_color : ''}">QRNG</a>
+            <a href="/#/demos" class="hover:no-underline {$location == '/demos' ? selected_color : ''}">Demos</a>
             <a href="/#/about" class="hover:no-underline {$location == '/about' ? selected_color : ''}">About</a>
         </ul>
 
