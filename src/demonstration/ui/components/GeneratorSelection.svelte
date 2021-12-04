@@ -1,10 +1,11 @@
 <script lang="ts">
-    import { generators, selected_generator } from '../../stores';
+    import { generators } from '../../stores/generators';
+    import { selected_generator } from '../../stores/statistics';
     import { fly } from 'svelte/transition';
     let dropdownOpen = false;
 
     const switch_generator = (generator) => {
-        selected_generator.update(old => ({...old, generator}))
+        selected_generator.update(generator);
         dropdownOpen = false;
     }
 

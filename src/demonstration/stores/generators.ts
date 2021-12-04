@@ -1,6 +1,6 @@
-import { writable, readable } from 'svelte/store';
+import { readable } from 'svelte/store';
 
-let fetched_generators = [
+let all_generators = [
     {
         name: "Intel QRNG",
         img: "qrng-logo.png",
@@ -19,16 +19,5 @@ let fetched_generators = [
 ]
 
 export const generators = readable(
-    fetched_generators
-);
-
-export const selected_generator = writable(
-    {
-        generator: fetched_generators[0],
-        statistics: {
-            mean: 20,
-            max: 50,
-            min: 4,
-        }
-    }
+    all_generators
 );

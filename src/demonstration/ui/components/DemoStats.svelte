@@ -1,8 +1,6 @@
 
 <script lang="ts">
-
-    import { generators, selected_generator } from '../../stores';
-    // { $selected_generator.name }
+    import { selected_generator } from '../../stores/statistics';
 
     let mean:number = 20
 
