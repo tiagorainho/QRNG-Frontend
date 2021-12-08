@@ -1,0 +1,39 @@
+
+components
+services
+stores
+components
+    Footer.Svelte
+    Navbar.Svelte
+pages
+    demonstration
+        components
+            DemoStats.Svelte
+            GeneratorSelection.Svelte
+        Demonstrations.Svelte
+    documentation
+        components
+            DocsSidebar.Svelte
+        Documentation.Svelte
+    auth
+        components
+        Auth.Svelte
+App.Svelte
+main.ts
+
+________________________________________
+
+
+auth
+common
+demonstration
+    services
+    stores
+    ui
+        components
+            DemoStats.Svelte
+            GeneratorSelection.Svelte
+        Demonstrations.Svelte
+
+documentation
+qrng

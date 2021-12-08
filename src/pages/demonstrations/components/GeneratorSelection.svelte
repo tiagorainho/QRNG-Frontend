@@ -1,7 +1,9 @@
 <script lang="ts">
-    import { generators } from '../../stores/generators';
-    import { selected_generator } from '../../stores/statistics';
+    import { generators } from '../../../stores/generators';
+    import {selected_generator } from '../../../stores/demonstration';
     import { fly } from 'svelte/transition';
+    import type { Generator } from '../../../models/Generator';
+
     let dropdownOpen = false;
 
     const switch_generator = (generator) => {

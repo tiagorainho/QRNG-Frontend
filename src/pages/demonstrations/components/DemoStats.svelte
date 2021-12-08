@@ -1,7 +1,7 @@
 
 <script lang="ts">
-    import { selected_generator } from '../../stores/statistics';
-
+    import { selected_generator } from '../../../stores/demonstration';
+    
     let mean:number = 20
 
     function sleep(ms) {
@@ -21,11 +21,11 @@
     
 
 </script>
-
+    
 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
     <div class="px-4 py-5 sm:px-6">
         <h3 class="text-lg leading-6 font-medium">
-            Statistics
+            Statistics of { $selected_generator.generator.name }
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
             Generator details and live statistics

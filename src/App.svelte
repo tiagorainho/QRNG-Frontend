@@ -1,8 +1,17 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import Router from 'svelte-spa-router'
-	import { routes } from './common/routes'
-	import Navbar  from './common/ui/Navbar.svelte'
-	import Footer from './common/ui/Footer.svelte'
+	import { routes } from './routes'
+	import Navbar  from './components/Navbar.svelte'
+	import Footer from './components/Footer.svelte'
+
+	import { fetchGenerators } from './services/GeneratorService';
+	import { assignGenerator } from './services/DemonstrationService';
+
+	onMount(() => {
+        fetchGenerators()
+		assignGenerator()
+    });
 
 </script>
 
