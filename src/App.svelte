@@ -23,6 +23,6 @@
 	</div>
 	<div class="flex-grow min-w-full px-4 md:px-32 py-12 bg-light-gray text-gray-700 z-0">
     	<Router {routes}/>
-	</div>
+	</div>	  
 	<Footer/>
 </body>

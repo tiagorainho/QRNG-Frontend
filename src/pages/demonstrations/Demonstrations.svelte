@@ -5,6 +5,9 @@
   import GeneratorSelection from "./components/GeneratorSelection.svelte";
   import StartDemo from "./components/StartDemo.svelte";
 
+  import Demo1 from "./demos/Demo1.svelte";
+  import Demo2 from "./demos/Demo2.svelte";
+
 </script>
 
 
@@ -22,31 +25,9 @@
     </div>
   </div>
   
-  <div class="grid justify-items-start">
-  
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-  </div>
-  <br>
-  <div class="flex justify-between ...">
-    <div class="order-last">1</div>
-    <div>2</div>
-    <div>3</div>
+
+  <div class="grid grid-cols-2 gap-x-12 gap-y-6">
+    <Demo1/>
+    <Demo2/>
   </div>
 </div>
-asa<br>
-asa<br>
-asa<br>
-asa<br>
-asa<br>
-asa<br>
-v
-asa<br>asa<br>
-asa<br>
-asa<br>
-asa<br>
-asa<br>

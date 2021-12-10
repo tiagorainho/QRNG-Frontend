@@ -28,16 +28,26 @@ function fetch_from_server(n : number) {
 
 function update_statistics(new_random_numbers:number[]) {
     let stats = get(selected_generator).statistics
-
+    let sum:number = 0
+    let max:number = stats.max
+    let min:number = stats.min
+    
     for(let number of new_random_numbers) {
 
-        stats.sum += number
-        if(stats.max == null || number > stats.max) stats.max = number
-        if(stats.min == null || number < stats.min) stats.min = number
+        sum += number
+        if(max == null || number > stats.max) max = number
+        if(min == null || number < stats.min) min = number
 
     }
 
-    stats.mean = stats.sum/get(selected_generator).random_values.length
+    let store = get(selected_generator)
+    selected_generator.update_stats({
+            sum: store.statistics.sum + sum,
+            mean: (store.statistics.sum + sum)/(store.random_values.length+new_random_numbers.length),
+            max: max,
+            min: min
+        }
+    )
 }
 
 export async function fetch(n : number) {

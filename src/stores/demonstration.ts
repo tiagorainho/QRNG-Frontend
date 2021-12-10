@@ -2,14 +2,14 @@ import { writable, get } from 'svelte/store';
 import { generators } from './generators';
 
 const default_statistics = {
-    mean: null,
-    max: null,
-    min: null,
+    mean: null as number,
+    max: null as number,
+    min: null as number,
     sum: 0,
-    Q1: null,
-    Q2: null,
-    Q3: null,
-    Q4: null
+    Q1: null as number,
+    Q2: null as number,
+    Q3: null as number,
+    Q4: null as number
 }
 
 function createGeneratorStatistics() {
@@ -36,6 +36,13 @@ function createGeneratorStatistics() {
             statistics: default_statistics,
             elapsed: 0,
             old: 0
+        })),
+        update_stats: (stats) => update((old) => ({
+            ...old,
+            statistics: {
+                ...old.statistics,
+                ...stats
+            }
         })),
         update_generator: (generator) => update(() => ({
             generator: generator,
