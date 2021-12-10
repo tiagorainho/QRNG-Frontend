@@ -7,6 +7,7 @@
 
   import Demo1 from "./demos/Demo1.svelte";
   import Demo2 from "./demos/Demo2.svelte";
+  import Demo3 from "./demos/Demo3.svelte";
 
 </script>
 
@@ -29,5 +30,6 @@
   <div class="grid grid-cols-2 gap-x-12 gap-y-6">
     <Demo1/>
     <Demo2/>
+    <Demo3/>
   </div>
 </div>

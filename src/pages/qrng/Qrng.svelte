@@ -7,7 +7,7 @@
     <p class="text-md text-dark-gray">qrng</p>
     <CodeBlock code="
         npm install \\
-        boas"/>
+        npm run dev"/>
 </div>
 
 
