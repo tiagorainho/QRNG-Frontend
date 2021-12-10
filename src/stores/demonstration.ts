@@ -1,20 +1,62 @@
 import { writable, get } from 'svelte/store';
-import { Generator } from '../models/Generator';
 import { generators } from './generators';
 
+const default_statistics = {
+    mean: null,
+    max: null,
+    min: null,
+    sum: 0,
+    Q1: null,
+    Q2: null,
+    Q3: null,
+    Q4: null
+}
 
 function createGeneratorStatistics() {
 	const { subscribe, update, set } = writable({
-        generator: Generator,//get(generators)[0],
+        generator: get(generators)[0],
         random_values: [],
-        statistics: {}
+        statistics: default_statistics,
+        active: false,
+        elapsed: 0,
+        total: 0
     });
 
 	return {
 		subscribe,
-        add: (random_numbers) => update(old => ({...old, random_values: [...old.random_values, random_numbers]})),
-        reset_values: () => update(old => ({...old, random_values: [], statistics: {}})),
-        update: (generator) => update(old => ({generator: generator, random_values: [], statistics: {}}))
+        set,
+        update,
+        add: (random_numbers) => update(old => ({
+            ...old,
+            random_values: [...old.random_values, ...random_numbers]
+        })),
+        reset_values: () => update(old => ({
+            ...old,
+            random_values: [],
+            statistics: default_statistics,
+            elapsed: 0,
+            old: 0
+        })),
+        update_generator: (generator) => update(() => ({
+            generator: generator,
+            random_values: [],
+            statistics: default_statistics,
+            active: false,
+            elapsed: 0,
+            total: 0
+        })),
+        status: (value) => update((old) => ({
+            ...old,
+            active:value
+        })),
+        tick: () => update((old) => ({
+            ...old,
+            elapsed: old.elapsed+1
+        })),
+        update_goal: (goal) => update((old) => ({
+            ...old,
+            total: old.random_values.length + goal
+        }))
 	};
 }
 

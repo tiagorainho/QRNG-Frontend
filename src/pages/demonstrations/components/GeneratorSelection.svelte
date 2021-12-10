@@ -2,18 +2,17 @@
     import { generators } from '../../../stores/generators';
     import {selected_generator } from '../../../stores/demonstration';
     import { fly } from 'svelte/transition';
-    import type { Generator } from '../../../models/Generator';
 
     let dropdownOpen = false;
 
     const switch_generator = (generator) => {
-        selected_generator.update(generator);
+        selected_generator.update_generator(generator);
         dropdownOpen = false;
     }
 
 </script>
 
-<div>
+<div class="mx-auto w-64">
     <h3 class="block text-sm font-medium text-gray-700">
         Select the Generator
     </h3>
@@ -51,7 +50,7 @@
         
                 Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
                 -->
-                <li on:click={() => switch_generator(generator)} class="text-gray-900 select-none relative py-2 pl-3 pr-9 hover:bg-gray-200 cursor-pointer" id="listbox-option-0" role="option">
+                <li on:click={() => switch_generator(generator)} class="text-gray-900 select-none relative py-2 pl-3 pr-9 hover:bg-gray-200 cursor-pointer {($selected_generator.generator.id == generator.id) ? 'bg-gray-100': ''}" id="listbox-option-0" role="option">
                     <div class="flex items-center">
                         <img src="{generator.img}" alt="" class="flex-shrink-0 h-6 w-6 rounded-full">
                         <!-- Selected: "font-semibold", Not Selected: "font-normal" -->

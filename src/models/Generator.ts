@@ -4,4 +4,5 @@ export class Generator {
     name: string;
     developed_by: string;
     img: string;
+    type: string;
 }

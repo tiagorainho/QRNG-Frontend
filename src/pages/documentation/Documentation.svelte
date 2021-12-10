@@ -26,10 +26,12 @@
 
 
         <h2 class="text-1xl pt-8 font-semibold" id="qrng-service">QRNG Service</h2>
+        adad
+
+        <h2 class="text-1xl pt-8 font-semibold" id="qrng-service">Prime Service</h2>
 
 
-
-
+ada
 
     </div>
 

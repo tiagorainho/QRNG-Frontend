@@ -1,15 +1,23 @@
 
 <script lang="ts">
   import DemoStats from "./components/DemoStats.svelte";
+  import GeneratorStats from "./components/GeneratorStats.svelte";
   import GeneratorSelection from "./components/GeneratorSelection.svelte";
+  import StartDemo from "./components/StartDemo.svelte";
+
 </script>
 
+
 <div>
-  <div class="flex flex-col md:flex-row gap-x-20 pb-16 space-y-4 justify-center mx-auto">
-    <div class="w-64">
+  <div class="flex flex-col xl:flex-row gap-x-20 pb-16 space-y-4 justify-center">
+    <div class="flex flex-col">
       <GeneratorSelection/>
+      <StartDemo/>
     </div>
-    <div class="flex-grow">
+    <div class="flex-1">
+      <GeneratorStats/>
+    </div>
+    <div class="flex-1">
       <DemoStats/>
     </div>
   </div>
@@ -30,3 +38,15 @@
     <div>3</div>
   </div>
 </div>
+asa<br>
+asa<br>
+asa<br>
+asa<br>
+asa<br>
+asa<br>
+v
+asa<br>asa<br>
+asa<br>
+asa<br>
+asa<br>
+asa<br>

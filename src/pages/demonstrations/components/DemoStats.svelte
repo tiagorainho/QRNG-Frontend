@@ -21,14 +21,20 @@
     
 
 </script>
-    
-<div class="bg-white shadow overflow-hidden sm:rounded-lg">
+
+<div class="bg-white shadow overflow-hidden rounded-lg">
     <div class="px-4 py-5 sm:px-6">
-        <h3 class="text-lg leading-6 font-medium">
-            Statistics of { $selected_generator.generator.name }
+        <h3 class="text-lg leading-6 font-medium flex">
+            <span>Statistics</span>
+            {#if $selected_generator.active == true }
+                <span class="flex my-auto ml-4">
+                    <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-it-red opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-it-red"></span>
+                </span>
+            {/if}
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
-            Generator details and live statistics
+            Live statistics
         </p>
     </div>
     <div class="border-t border-gray-200">
@@ -38,7 +44,19 @@
                     Mean
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {mean}
+                    { ( $selected_generator.statistics.mean == null ) ? 0: $selected_generator.statistics.mean }
+                </dd>
+                <dt class="text-sm font-medium text-gray-500">
+                    Max
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    { ( $selected_generator.statistics.max == null ) ? 0: $selected_generator.statistics.max }
+                </dd>
+                <dt class="text-sm font-medium text-gray-500">
+                    Min
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    { ( $selected_generator.statistics.min == null ) ? 0: $selected_generator.statistics.min }
                 </dd>
             </div>
         </dl>
