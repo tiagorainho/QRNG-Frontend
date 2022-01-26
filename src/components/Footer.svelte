@@ -23,13 +23,10 @@
           </h2>
           <ul class="mb-8 space-y-2 text-sm list-none">
             <li>
-              <a href="/#" class="text-gray-500 hover:text-gray-800 hover:no-underline">Register</a>
+              <a href="/#" class="text-gray-500 hover:text-gray-800 hover:no-underline">Documentation</a>
             </li>
             <li>
               <a href="/#" class="text-gray-500 hover:text-gray-800 hover:no-underline">Staff</a>
-            </li>
-            <li>
-              <a href="/#" class="text-gray-500 hover:text-gray-800 hover:no-underline">Documentation</a>
             </li>
           </ul>
         </div>
@@ -42,10 +39,10 @@
               <a href="/#" class="text-gray-500 hover:text-gray-800 hover:no-underline">Register</a>
             </li>
             <li>
-              <a href="/#" class="text-gray-500 hover:text-gray-800 hover:no-underline">Staff</a>
+              <a href="/#" class="text-gray-500 hover:text-gray-800 hover:no-underline">Log In</a>
             </li>
             <li>
-              <a href="/#" class="text-gray-500 hover:text-gray-800 hover:no-underline">Documentation</a>
+              <a href="/#" class="text-gray-500 hover:text-gray-800 hover:no-underline">Documendation</a>
             </li>
           </ul>
         </div>
@@ -72,7 +69,7 @@
     </div>
     <div class="flex justify-center">
       <p class="text-base text-gray-400">
-        All rights reserved by IT 2021
+        All rights reserved by <a href="https://www.it.pt">IT</a> 2021
       </p>
     </div>
   </footer>

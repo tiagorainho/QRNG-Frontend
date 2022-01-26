@@ -1,6 +1,6 @@
 <script>
     import Sidebar from "./components/DocsSidebar.svelte";
-
+    import CodeBlock from "../../components/CodeBlock.svelte";
 </script>
 
 
@@ -29,6 +29,13 @@
         adad
 
         <h2 class="text-1xl pt-8 font-semibold" id="qrng-service">Prime Service</h2>
+
+        <div >
+            <p class="text-md text-dark-gray">qrng</p>
+            <CodeBlock code="
+                npm install \\
+                npm run dev"/>
+        </div>
 
 
 ada
