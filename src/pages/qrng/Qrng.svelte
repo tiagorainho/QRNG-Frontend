@@ -25,7 +25,7 @@
                 <img class="mx-auto" src="assets/images/physical_qrng.png" alt="Quantum random number generator as implemented at Instituto de Telecomunicações">
             </div>
             <div class="flex-1">
-                <img class="mx-auto" src="assets/images/noise_sample.png" alt="Bitmap (500x500) with the extracted true random bits showing a clear absence of any evident patterns.">
+                <img class="mx-auto" src="assets/images/noise_sample.jpg" alt="Bitmap (500x500) with the extracted true random bits showing a clear absence of any evident patterns.">
             </div>
         </div>
     </div>

@@ -1961,7 +1961,7 @@ var app = (function () {
     			attr_dev(div2, "class", "flex-1");
     			add_location(div2, file$f, 21, 12, 2367);
     			attr_dev(img2, "class", "mx-auto");
-    			if (!src_url_equal(img2.src, img2_src_value = "assets/images/noise_sample.png")) attr_dev(img2, "src", img2_src_value);
+    			if (!src_url_equal(img2.src, img2_src_value = "assets/images/noise_sample.jpg")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "Bitmap (500x500) with the extracted true random bits showing a clear absence of any evident patterns.");
     			add_location(img2, file$f, 25, 16, 2618);
     			attr_dev(div3, "class", "flex-1");
