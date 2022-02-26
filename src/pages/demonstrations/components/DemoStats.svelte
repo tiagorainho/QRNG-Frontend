@@ -1,11 +1,26 @@
 
 <script lang="ts">
     import { selected_generator } from '../../../stores/demonstration';
-    
+    import { get } from "svelte/store";
+
     let mean:number = 20
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function download_random_numbers() {
+        let random_numbers = get(selected_generator).random_values;
+        let contentType = 'application/octet-stream';
+        var a = document.createElement('a');
+        var blob = new Blob([random_numbers.join(", ")], {'type':contentType});
+        a.href = window.URL.createObjectURL(blob);
+        a.download = `random_numbers_at_${Date.now()}.csv`;
+        a.click();
+        /*
+        document.location = 'data:Application/octet-stream,' + 
+            encodeURIComponent(random_numbers.join(", "));
+        */
     }
 
     async function simulate() {
@@ -23,19 +38,29 @@
 </script>
 
 <div class="bg-white shadow overflow-hidden rounded-lg">
-    <div class="px-4 py-5 sm:px-6">
-        <h3 class="text-lg leading-6 font-medium flex">
-            <span>Statistics</span>
-            {#if $selected_generator.active == true }
-                <span class="flex my-auto ml-4">
-                    <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-it-red opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-it-red"></span>
-                </span>
+    <div class="flex px-4 py-5 sm:px-6">
+        <div class="flex-1">
+            <h3 class="text-lg leading-6 font-medium flex">
+                <span>Statistics</span>
+                {#if $selected_generator.active == true }
+                    <span class="flex my-auto ml-4">
+                        <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-it-red opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-it-red"></span>
+                    </span>
+                {/if}
+            </h3>
+            <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                Live statistics
+            </p>
+        </div>
+        <div class="flex-right">
+            {#if $selected_generator.random_values.length > 0 && $selected_generator.active == false}
+            <button on:click={download_random_numbers} class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-2 rounded inline-flex items-center">
+                <svg class="fill-current w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                <span class="ml-2">Random Numbers</span>
+            </button>
             {/if}
-        </h3>
-        <p class="mt-1 max-w-2xl text-sm text-gray-500">
-            Live statistics
-        </p>
+        </div>
     </div>
     <div class="border-t border-gray-200">
         <dl>
