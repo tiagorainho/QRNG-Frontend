@@ -11,9 +11,11 @@
 
     function download_random_numbers() {
         let random_numbers = get(selected_generator).random_values;
-        let contentType = 'application/octet-stream';
-        var a = document.createElement('a');
-        var blob = new Blob([random_numbers.join(", ")], {'type':contentType});
+        let a = document.createElement('a');
+        let blob = new Blob(
+            [random_numbers.join(", ")], 
+            {'type': 'application/octet-stream'}
+        );
         a.href = window.URL.createObjectURL(blob);
         a.download = `random_numbers_at_${Date.now()}.csv`;
         a.click();
@@ -31,10 +33,7 @@
             await sleep(2000);
         }
     }
-
     simulate()
-    
-
 </script>
 
 <div class="bg-white shadow overflow-hidden rounded-lg">
